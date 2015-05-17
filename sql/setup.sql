@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS babygestDev;
+DROP DATABASE IF EXISTS babygestTest;
+DROP DATABASE IF EXISTS babygestProd;
+
+CREATE DATABASE babygestDev;
+CREATE DATABASE babygestTest;
+CREATE DATABASE babygestProd;

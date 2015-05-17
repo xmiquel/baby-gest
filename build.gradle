@@ -9,6 +9,7 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.1.1'
+        classpath 'org.grails.plugins:database-migration:2.0.0.RC1'
     }
 }
 
@@ -71,8 +72,21 @@ dependencies {
     testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
 
     console "org.grails:grails-console"
+
+    runtime 'org.grails.plugins:database-migration:2.0.0.RC1'
+    runtime 'mysql:mysql-connector-java:5.1.35'
+
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
+}
+
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'grails-app/migrations'
+        }
+    }
 }
